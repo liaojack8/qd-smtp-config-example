@@ -42,3 +42,16 @@ def _send_mail(to, subject, text=None, subtype='html'):
     except Exception as e:
         print(f'send mail error: {e}')
     return
+
+receiver = 'username@example.com' # receiver email
+
+import config_gmail_ssl as config
+_send_mail(receiver, f'{config.mail_service} QianDao Test Message', text='Are all settings correct?\r\nSent via send_mail.py')
+import config_gmail_starttls as config
+_send_mail(receiver, f'{config.mail_service} QianDao Test Message', text='Are all settings correct?\r\nSent via send_mail.py')
+import config_outlook as config
+_send_mail(receiver, f'{config.mail_service} QianDao Test Message', text='Are all settings correct?\r\nSent via send_mail.py')
+import config_yahoo_ssl as config
+_send_mail(receiver, f'{config.mail_service} QianDao Test Message', text='Are all settings correct?\r\nSent via send_mail.py')
+import config_yahoo_starttls as config
+_send_mail(receiver, f'{config.mail_service} QianDao Test Message', text='Are all settings correct?\r\nSent via send_mail.py')
